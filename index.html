@@ -11,7 +11,8 @@
       --primary-dark: #4A1328;
       --primary: #6B1D3A;
       --primary-light: #8B3A56;
-      --accent-gold: #C9A84C;
+      --bot-red: #B00027;
+      --accent-gold: #C4A55A;
       --accent-gold-light: #D4BA6A;
       --accent-gold-dark: #A8893D;
       --white: #FFFFFF;
@@ -23,7 +24,6 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -34,11 +34,9 @@
       overflow-x: hidden;
     }
 
-    /* ──────── GEOMETRIC BACKGROUND PATTERN ──────── */
     .geo-pattern {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       top: 0; left: 0;
       opacity: 0.06;
       pointer-events: none;
@@ -51,17 +49,15 @@
       background-position: 0 0, 0 30px, 30px -30px, 30px 0;
     }
 
-    /* ──────── NAVIGATION / LOGO BAR ──────── */
+    /* ──── NAV ──── */
     .nav-bar {
       background: var(--white);
-      border-bottom: 1px solid rgba(107, 29, 58, 0.08);
-      padding: 16px 0;
+      border-bottom: 1px solid rgba(107,29,58,0.08);
+      padding: 12px 0;
       position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 20px rgba(74, 19, 40, 0.05);
+      top: 0; z-index: 100;
+      box-shadow: 0 2px 20px rgba(74,19,40,0.05);
     }
-
     .nav-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -72,80 +68,38 @@
       flex-wrap: wrap;
       gap: 16px;
     }
-
     .logo-group {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 24px;
       flex-wrap: wrap;
     }
-
     .logo-divider {
       width: 1px;
-      height: 36px;
+      height: 40px;
       background: var(--medium-gray);
     }
 
-    /* Bank of Texas Logo */
-    .bot-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
+    /* Bank of Texas text logo */
+    .bot-logo { display: flex; flex-direction: column; line-height: 1.15; }
+    .bot-logo .bank-name {
+      font-family: 'Inter', sans-serif; font-weight: 800; font-size: 15px;
+      color: var(--bot-red); letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .bot-logo .powered-by {
+      font-family: 'Inter', sans-serif; font-weight: 400; font-size: 9.5px;
+      color: var(--primary-light); letter-spacing: 0.3px;
     }
 
-    .bot-logo-icon {
-      width: 38px;
-      height: 38px;
-    }
-
-    .bot-logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
-    }
-
-    .bot-logo-text .bank-name {
-      font-family: 'Inter', sans-serif;
-      font-weight: 800;
-      font-size: 15px;
-      color: var(--primary);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .bot-logo-text .powered-by {
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      font-size: 9.5px;
-      color: var(--primary-light);
-      letter-spacing: 0.3px;
-    }
-
-    /* Goheen Financial Logo */
-    .goheen-logo {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      line-height: 1.15;
-    }
-
+    /* Goheen Insurance text logo */
+    .goheen-logo { display: flex; flex-direction: column; line-height: 1.2; }
     .goheen-logo .goheen-name {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 17px;
-      color: var(--primary);
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px;
+      color: var(--primary); letter-spacing: 1.5px; text-transform: uppercase;
     }
-
     .goheen-logo .goheen-sub {
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      font-size: 9px;
-      color: var(--accent-gold-dark);
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-family: 'Inter', sans-serif; font-weight: 400; font-size: 9px;
+      color: var(--accent-gold-dark); letter-spacing: 2.5px; text-transform: uppercase;
     }
 
     .nav-cta {
@@ -162,14 +116,13 @@
       border-radius: 4px;
       transition: all 0.3s ease;
     }
-
     .nav-cta:hover {
       background: var(--accent-gold-dark);
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(201, 168, 76, 0.35);
+      box-shadow: 0 4px 12px rgba(196,165,90,0.35);
     }
 
-    /* ──────── HERO SECTION ──────── */
+    /* ──── HERO ──── */
     .hero {
       position: relative;
       background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary) 40%, var(--primary-light) 100%);
@@ -177,26 +130,22 @@
       text-align: center;
       overflow: hidden;
     }
-
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -10%;
-      width: 120%;
-      height: 200%;
-      background: radial-gradient(ellipse at 30% 20%, rgba(201, 168, 76, 0.08) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
+      top: -50%; left: -10%;
+      width: 120%; height: 200%;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(196,165,90,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(255,255,255,0.04) 0%, transparent 50%);
       pointer-events: none;
     }
-
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 850px;
       margin: 0 auto;
     }
-
     .hero-eyebrow {
       font-family: 'Inter', sans-serif;
       font-weight: 600;
@@ -206,7 +155,6 @@
       color: var(--accent-gold);
       margin-bottom: 24px;
     }
-
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-weight: 800;
@@ -215,16 +163,14 @@
       line-height: 1.1;
       margin-bottom: 20px;
     }
-
     .hero-subtitle {
       font-family: 'Inter', sans-serif;
       font-weight: 300;
       font-size: clamp(16px, 2.2vw, 22px);
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255,255,255,0.85);
       margin-bottom: 40px;
       letter-spacing: 0.5px;
     }
-
     .hero-meta {
       display: flex;
       justify-content: center;
@@ -232,23 +178,19 @@
       flex-wrap: wrap;
       margin-bottom: 44px;
     }
-
     .hero-meta-item {
       display: flex;
       align-items: center;
       gap: 10px;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255,255,255,0.9);
       font-size: 15px;
       font-weight: 500;
     }
-
     .hero-meta-item svg {
-      width: 20px;
-      height: 20px;
+      width: 20px; height: 20px;
       fill: var(--accent-gold);
       flex-shrink: 0;
     }
-
     .hero-cta {
       display: inline-block;
       background: var(--accent-gold);
@@ -262,113 +204,73 @@
       padding: 18px 52px;
       border-radius: 4px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+      box-shadow: 0 4px 20px rgba(196,165,90,0.3);
     }
-
     .hero-cta:hover {
       background: var(--accent-gold-light);
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(201, 168, 76, 0.45);
+      box-shadow: 0 8px 30px rgba(196,165,90,0.45);
     }
-
     .hero-scroll-hint {
       margin-top: 50px;
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(255,255,255,0.4);
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
-
     .hero-scroll-hint svg {
       display: block;
       margin: 8px auto 0;
-      width: 20px;
-      height: 20px;
+      width: 20px; height: 20px;
       fill: rgba(255,255,255,0.3);
       animation: bobDown 2s ease-in-out infinite;
     }
-
     @keyframes bobDown {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(6px); }
     }
 
-    /* ──────── DETAILS STRIP ──────── */
+    /* ──── DETAILS STRIP ──── */
     .details-strip {
       background: var(--white);
       border-bottom: 3px solid var(--accent-gold);
       padding: 0 24px;
     }
-
     .details-inner {
       max-width: 1000px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0;
     }
-
     .detail-card {
       padding: 36px 28px;
       text-align: center;
       border-right: 1px solid var(--light-gray);
     }
-
-    .detail-card:last-child {
-      border-right: none;
-    }
-
-    .detail-card svg {
-      width: 28px;
-      height: 28px;
-      fill: var(--primary);
-      margin-bottom: 12px;
-    }
-
+    .detail-card:last-child { border-right: none; }
+    .detail-card svg { width: 28px; height: 28px; fill: var(--primary); margin-bottom: 12px; }
     .detail-card .detail-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
       color: var(--accent-gold-dark);
       margin-bottom: 6px;
     }
-
     .detail-card .detail-value {
       font-family: 'Playfair Display', serif;
-      font-weight: 600;
-      font-size: 17px;
-      color: var(--text-dark);
-      line-height: 1.35;
+      font-weight: 600; font-size: 17px;
+      color: var(--text-dark); line-height: 1.35;
     }
+    .detail-card .detail-sub { font-size: 13px; color: var(--text-body); margin-top: 4px; }
 
-    .detail-card .detail-sub {
-      font-size: 13px;
-      color: var(--text-body);
-      margin-top: 4px;
-    }
-
-    /* ──────── INVITATION SECTION ──────── */
-    .invitation {
-      padding: 80px 24px;
-      text-align: center;
-      background: var(--off-white);
-    }
-
-    .invitation-inner {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
+    /* ──── INVITATION ──── */
+    .invitation { padding: 80px 24px; text-align: center; background: var(--off-white); }
+    .invitation-inner { max-width: 760px; margin: 0 auto; }
     .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
       color: var(--accent-gold-dark);
       margin-bottom: 16px;
     }
-
     .section-title {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
@@ -377,72 +279,41 @@
       margin-bottom: 28px;
       line-height: 1.2;
     }
+    .invitation p { font-size: 17px; color: var(--text-body); line-height: 1.75; margin-bottom: 16px; }
+    .gold-line { width: 60px; height: 2px; background: var(--accent-gold); margin: 32px auto; }
 
-    .invitation p {
-      font-size: 17px;
-      color: var(--text-body);
-      line-height: 1.75;
-      margin-bottom: 16px;
-    }
-
-    .gold-line {
-      width: 60px;
-      height: 2px;
-      background: var(--accent-gold);
-      margin: 32px auto;
-    }
-
-    /* ──────── SPEAKERS SECTION ──────── */
-    .speakers {
-      padding: 80px 24px;
-      background: var(--white);
-    }
-
-    .speakers-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .speakers-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
+    /* ──── SPEAKERS ──── */
+    .speakers { padding: 80px 24px; background: var(--white); }
+    .speakers-inner { max-width: 1000px; margin: 0 auto; }
+    .speakers-header { text-align: center; margin-bottom: 56px; }
     .speakers-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 32px;
     }
-
     .speaker-card {
       background: var(--off-white);
       border-radius: 8px;
       padding: 44px 32px 36px;
       text-align: center;
-      border: 1px solid rgba(107, 29, 58, 0.06);
+      border: 1px solid rgba(107,29,58,0.06);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
     }
-
     .speaker-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
+      top: 0; left: 0;
+      width: 100%; height: 4px;
       background: linear-gradient(90deg, var(--primary), var(--accent-gold));
     }
-
     .speaker-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(74, 19, 40, 0.1);
+      box-shadow: 0 12px 40px rgba(74,19,40,0.1);
     }
-
     .speaker-avatar {
-      width: 80px;
-      height: 80px;
+      width: 80px; height: 80px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--primary), var(--primary-light));
       margin: 0 auto 20px;
@@ -454,7 +325,6 @@
       font-weight: 700;
       color: var(--white);
     }
-
     .speaker-name {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
@@ -462,36 +332,23 @@
       color: var(--primary);
       margin-bottom: 4px;
     }
-
     .speaker-credentials {
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 12px; font-weight: 600;
       color: var(--accent-gold-dark);
       letter-spacing: 0.5px;
       margin-bottom: 14px;
     }
+    .speaker-title { font-size: 14px; color: var(--text-body); line-height: 1.5; }
+    .speaker-org { font-weight: 600; color: var(--primary-light); }
 
-    .speaker-title {
-      font-size: 14px;
-      color: var(--text-body);
-      line-height: 1.5;
-    }
-
-    .speaker-org {
-      font-weight: 600;
-      color: var(--primary-light);
-    }
-
-    /* ──────── VENUE SECTION ──────── */
+    /* ──── VENUE ──── */
     .venue {
       position: relative;
       padding: 80px 24px;
       background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary) 100%);
       overflow: hidden;
     }
-
     .venue .geo-pattern { opacity: 0.04; }
-
     .venue-inner {
       max-width: 900px;
       margin: 0 auto;
@@ -502,112 +359,35 @@
       gap: 60px;
       align-items: center;
     }
-
-    .venue-info .section-label {
-      color: var(--accent-gold);
-    }
-
-    .venue-info .section-title {
-      color: var(--white);
-    }
-
-    .venue-detail {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .venue-detail svg {
-      width: 22px;
-      height: 22px;
-      fill: var(--accent-gold);
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .venue-detail-text {
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 15px;
-      line-height: 1.5;
-    }
-
-    .venue-detail-text strong {
-      color: var(--white);
-      font-weight: 600;
-    }
-
+    .venue-info .section-label { color: var(--accent-gold); }
+    .venue-info .section-title { color: var(--white); }
+    .venue-detail { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+    .venue-detail svg { width: 22px; height: 22px; fill: var(--accent-gold); flex-shrink: 0; margin-top: 2px; }
+    .venue-detail-text { color: rgba(255,255,255,0.88); font-size: 15px; line-height: 1.5; }
+    .venue-detail-text strong { color: var(--white); font-weight: 600; }
     .venue-map {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255,255,255,0.08);
       border-radius: 12px;
       overflow: hidden;
       aspect-ratio: 4/3;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255,255,255,0.1);
     }
+    .venue-map iframe { width: 100%; height: 100%; border: 0; }
 
-    .venue-map iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+    /* ──── PERKS ──── */
+    .perks { padding: 56px 24px; background: var(--white); border-bottom: 1px solid var(--light-gray); }
+    .perks-inner { max-width: 700px; margin: 0 auto; display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .perk { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; color: var(--text-dark); }
+    .perk svg { width: 24px; height: 24px; fill: var(--accent-gold); }
 
-    /* ──────── PERKS ──────── */
-    .perks {
-      padding: 56px 24px;
-      background: var(--white);
-      border-bottom: 1px solid var(--light-gray);
-    }
-
-    .perks-inner {
-      max-width: 700px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-
-    .perk {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text-dark);
-    }
-
-    .perk svg {
-      width: 24px;
-      height: 24px;
-      fill: var(--accent-gold);
-    }
-
-    /* ──────── CTA SECTION ──────── */
-    .cta-section {
-      padding: 80px 24px;
-      text-align: center;
-      background: var(--off-white);
-    }
-
-    .cta-inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .cta-section .section-title {
-      margin-bottom: 16px;
-    }
-
-    .cta-section p {
-      font-size: 16px;
-      color: var(--text-body);
-      margin-bottom: 36px;
-      line-height: 1.7;
-    }
-
+    /* ──── CTA ──── */
+    .cta-section { padding: 80px 24px; text-align: center; background: var(--off-white); }
+    .cta-inner { max-width: 640px; margin: 0 auto; }
+    .cta-section .section-title { margin-bottom: 16px; }
+    .cta-section p { font-size: 16px; color: var(--text-body); margin-bottom: 36px; line-height: 1.7; }
     .cta-button {
       display: inline-block;
       background: var(--primary);
@@ -621,28 +401,21 @@
       padding: 20px 60px;
       border-radius: 4px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(107, 29, 58, 0.25);
+      box-shadow: 0 4px 20px rgba(107,29,58,0.25);
     }
-
     .cta-button:hover {
       background: var(--primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(107, 29, 58, 0.35);
+      box-shadow: 0 8px 30px rgba(107,29,58,0.35);
     }
+    .cta-note { margin-top: 20px; font-size: 13px; color: var(--medium-gray); }
 
-    .cta-note {
-      margin-top: 20px;
-      font-size: 13px;
-      color: var(--medium-gray);
-    }
-
-    /* ──────── FOOTER ──────── */
+    /* ──── FOOTER ──── */
     footer {
       background: var(--primary-dark);
       padding: 40px 24px;
       text-align: center;
     }
-
     .footer-logos {
       display: flex;
       align-items: center;
@@ -651,65 +424,32 @@
       margin-bottom: 24px;
       flex-wrap: wrap;
     }
-
-    .footer-logo-bot {
-      display: flex;
-      align-items: center;
-      gap: 8px;
+    .footer-bot { display: flex; flex-direction: column; line-height: 1.15; }
+    .footer-bot .f-bank-name {
+      font-family: 'Inter', sans-serif; font-weight: 800; font-size: 14px;
+      color: var(--white); letter-spacing: 0.5px; text-transform: uppercase;
     }
-
-    .footer-logo-bot svg {
-      width: 30px;
-      height: 30px;
+    .footer-bot .f-powered-by {
+      font-size: 8.5px; color: rgba(255,255,255,0.55); letter-spacing: 0.3px;
     }
-
-    .footer-logo-bot .f-bank-name {
-      font-weight: 800;
-      font-size: 13px;
-      color: var(--white);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      line-height: 1.15;
+    .footer-goheen { display: flex; flex-direction: column; line-height: 1.2; }
+    .footer-goheen .fg-name {
+      font-family: 'Playfair Display', serif; font-weight: 700; font-size: 15px;
+      color: var(--white); letter-spacing: 1.2px; text-transform: uppercase;
     }
-
-    .footer-logo-bot .f-powered-by {
-      font-size: 8px;
-      color: rgba(255, 255, 255, 0.6);
-      letter-spacing: 0.3px;
+    .footer-goheen .fg-sub {
+      font-size: 8px; color: rgba(255,255,255,0.45); letter-spacing: 2px; text-transform: uppercase;
     }
-
-    .footer-divider {
-      width: 1px;
-      height: 28px;
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .footer-logo-goheen .fg-name {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--white);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      line-height: 1.15;
-    }
-
-    .footer-logo-goheen .fg-sub {
-      font-size: 8px;
-      color: rgba(255, 255, 255, 0.5);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
+    .footer-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.2); }
     .footer-disclaimer {
       font-size: 11px;
-      color: rgba(255, 255, 255, 0.4);
+      color: rgba(255,255,255,0.4);
       line-height: 1.6;
       max-width: 600px;
       margin: 0 auto;
     }
 
-    /* ──────── RESPONSIVE ──────── */
+    /* ──── RESPONSIVE ──── */
     @media (max-width: 768px) {
       .hero { padding: 70px 20px 60px; }
       .hero-meta { gap: 20px; flex-direction: column; align-items: center; }
@@ -719,41 +459,39 @@
       .speakers-grid { grid-template-columns: 1fr; }
       .nav-cta { display: none; }
       .perks-inner { flex-direction: column; align-items: center; gap: 24px; }
+      .bot-logo .bank-name { font-size: 13px; }
+      .goheen-logo .goheen-name { font-size: 15px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ──────── NAVIGATION ──────── -->
+  <!-- ──── NAVIGATION ──── -->
   <nav class="nav-bar">
     <div class="nav-inner">
       <div class="logo-group">
-        <!-- Bank of Texas Logo -->
+
+        <!-- Bank of Texas text logo -->
         <div class="bot-logo">
-          <svg class="bot-logo-icon" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="18" fill="none" stroke="#6B1D3A" stroke-width="2.5"/>
-            <path d="M12 20 L16 14 L20 20 L24 14 L28 20 L24 26 L20 20 L16 26 Z" fill="#6B1D3A"/>
-          </svg>
-          <div class="bot-logo-text">
-            <span class="bank-name">Bank of Texas</span>
-            <span class="powered-by">Powered by BOK Financial&reg;</span>
-          </div>
+          <span class="bank-name">Bank of Texas</span>
+          <span class="powered-by">Powered by BOK Financial&reg;</span>
         </div>
 
         <div class="logo-divider"></div>
 
-        <!-- Goheen Financial Logo -->
+        <!-- Goheen Insurance text logo -->
         <div class="goheen-logo">
-          <span class="goheen-name">Goheen Financial</span>
-          <span class="goheen-sub">Insurance &bull; Wealth Strategy</span>
+          <span class="goheen-name">Goheen Insurance</span>
+          <span class="goheen-sub">A Simplicity Company</span>
         </div>
+
       </div>
 
       <a href="https://explore.bokfinancial.com/Austin-Legacy-Event-Registration.html" class="nav-cta" target="_blank" rel="noopener">RSVP Now</a>
     </div>
   </nav>
 
-  <!-- ──────── HERO ──────── -->
+  <!-- ──── HERO ──── -->
   <section class="hero">
     <div class="geo-pattern"></div>
     <div class="hero-content">
@@ -785,7 +523,7 @@
     </div>
   </section>
 
-  <!-- ──────── DETAILS STRIP ──────── -->
+  <!-- ──── DETAILS STRIP ──── -->
   <section class="details-strip">
     <div class="details-inner">
       <div class="detail-card">
@@ -813,7 +551,7 @@
     </div>
   </section>
 
-  <!-- ──────── INVITATION TEXT ──────── -->
+  <!-- ──── INVITATION TEXT ──── -->
   <section class="invitation" id="about">
     <div class="invitation-inner">
       <p class="section-label">You're Invited</p>
@@ -824,7 +562,7 @@
     </div>
   </section>
 
-  <!-- ──────── SPEAKERS ──────── -->
+  <!-- ──── SPEAKERS ──── -->
   <section class="speakers" id="speakers">
     <div class="speakers-inner">
       <div class="speakers-header">
@@ -833,23 +571,18 @@
       </div>
 
       <div class="speakers-grid">
-        <!-- Speaker 1 -->
         <div class="speaker-card">
           <div class="speaker-avatar">RH</div>
           <h3 class="speaker-name">Rob Hugos</h3>
           <p class="speaker-credentials">JD, CPA, LL.M.</p>
           <p class="speaker-title">Director of Wealth Preservation and Protection Planning<br><span class="speaker-org">Texas Trust Law</span></p>
         </div>
-
-        <!-- Speaker 2 -->
         <div class="speaker-card">
           <div class="speaker-avatar">SG</div>
           <h3 class="speaker-name">Shawn Goheen</h3>
           <p class="speaker-credentials">CSA, LUTCF&reg;</p>
           <p class="speaker-title">President and Founder<br><span class="speaker-org">Goheen Insurance &bull; Life Insurance</span></p>
         </div>
-
-        <!-- Speaker 3 -->
         <div class="speaker-card">
           <div class="speaker-avatar">GL</div>
           <h3 class="speaker-name">Greg Lee</h3>
@@ -860,7 +593,7 @@
     </div>
   </section>
 
-  <!-- ──────── VENUE ──────── -->
+  <!-- ──── VENUE ──── -->
   <section class="venue" id="venue">
     <div class="geo-pattern"></div>
     <div class="venue-inner">
@@ -875,7 +608,6 @@
             West Lake Hills, TX 78746
           </div>
         </div>
-
         <div class="venue-detail">
           <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
           <div class="venue-detail-text">
@@ -883,7 +615,6 @@
             Wednesday, April 8, 2026
           </div>
         </div>
-
         <div class="venue-detail">
           <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
           <div class="venue-detail-text">
@@ -904,7 +635,7 @@
     </div>
   </section>
 
-  <!-- ──────── PERKS ──────── -->
+  <!-- ──── PERKS ──── -->
   <section class="perks">
     <div class="perks-inner">
       <div class="perk">
@@ -922,7 +653,7 @@
     </div>
   </section>
 
-  <!-- ──────── CTA SECTION ──────── -->
+  <!-- ──── CTA ──── -->
   <section class="cta-section" id="rsvp">
     <div class="cta-inner">
       <p class="section-label">Secure Your Place</p>
@@ -933,25 +664,22 @@
     </div>
   </section>
 
-  <!-- ──────── FOOTER ──────── -->
+  <!-- ──── FOOTER ──── -->
   <footer>
     <div class="footer-logos">
-      <div class="footer-logo-bot">
-        <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="18" fill="none" stroke="#fff" stroke-width="2"/>
-          <path d="M12 20 L16 14 L20 20 L24 14 L28 20 L24 26 L20 20 L16 26 Z" fill="#fff"/>
-        </svg>
-        <div>
-          <div class="f-bank-name">Bank of Texas</div>
-          <div class="f-powered-by">Powered by BOK Financial&reg;</div>
-        </div>
+
+      <!-- Bank of Texas text logo -->
+      <div class="footer-bot">
+        <span class="f-bank-name">Bank of Texas</span>
+        <span class="f-powered-by">Powered by BOK Financial&reg;</span>
       </div>
 
       <div class="footer-divider"></div>
 
-      <div class="footer-logo-goheen">
-        <div class="fg-name">Goheen Financial</div>
-        <div class="fg-sub">Insurance &bull; Wealth Strategy</div>
+      <!-- Goheen Insurance text logo -->
+      <div class="footer-goheen">
+        <span class="fg-name">Goheen Insurance</span>
+        <span class="fg-sub">A Simplicity Company</span>
       </div>
     </div>
 
